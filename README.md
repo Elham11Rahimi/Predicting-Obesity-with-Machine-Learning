@@ -1,30 +1,22 @@
-# Predicting-Obesity-with-Machine-Learning
-This project uses data analysis and machine learning to predict a person’s risk of obesity based on lifestyle, diet, and genetics. By analyzing factors like meal frequency, physical activity, and caloric intake, it uncovers key contributors to obesity, helping with early prevention and smarter health choices.
-
-
-## Project Title
+## Predicting Obesity with Machine Learning
 =========================
 
 ### Executive Summary
 
-... Define the problem
-... What is the data science opportunity
-... Key takeaways
+Obesity is a major health issue worldwide, driven by lifestyle, eating habits, and genetics. Catching it early can help prevent serious health problems, but predicting obesity risk isn't always straightforward. With machine learning and data analysis, we can pinpoint key risk factors and predict someone's likelihood of becoming obese. This gives people the chance to take action before it happens, making healthier choices based on data-driven insights.
+
+- Analyzes factors like meal frequency, physical activity, caloric intake, and family history.
+
+- Uses machine learning to classify individuals into different obesity risk categories.
+
+- Provides insights into the most influential contributors to obesity.
+
+- Enables proactive health interventions and personalized recommendations.
 
 ### Demo
 
-... Show your work:
-...     Data visualizations
-...     Interactive demo (e.g., `streamlit` app)
-...     Short video of users trying out the solution
-
 
 ### Methodology
-
-... High-level diagrams of entire process:
-...     various data processing steps
-...     various modelling directions
-...     various prototyping directions
 
 
 ### Organization
