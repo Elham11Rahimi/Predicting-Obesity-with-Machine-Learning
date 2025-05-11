@@ -29,11 +29,27 @@ Classification models will be explored and the model will not only predict obesi
 ### Demo
 
 ### Methodology
+- Exploratory Data Analysis (EDA) to understand trends and class distribution
+
+- Feature Engineering: created binary features, combined sparse columns, removed low-variance and redundant features
+
+- Preprocessing: applied standard scaling and log transformation to reduce skew. Created a seperate dataframe for group PCA
+
+- Modeling: Trained and tuned a logistic regression model and decision trees model using Pipeline and GridSearchCV
+
+Evaluation: Achieved ~87% accuracy with balanced precision and recall across all obesity levels
 
 ### Organization
 
 #### Repository 
 
 #### Dataset
+Source: https://www.kaggle.com/datasets/fatemehmehrparvar/obesity-levels
+
+Size: ~20,000 records
+
+Features: Demographics, dietary habits, physical activity, lifestyle indicators
+
+Target: obesity_level (7-class categorical variable)
 
 ### Credits & References
