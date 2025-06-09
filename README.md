@@ -99,5 +99,3 @@ Ultimately, this tool can help both individuals and organizations better underst
 Note: One-hot encoding was applied to categorical variables like CAEC, CALC, MTRANS during preprocessing. Low-variance and highly imbalanced dummies were dropped before modeling.
 
 ---
-
-Let me know if you'd like this in `.md`, `.txt`, or as a `README.pdf` format!
