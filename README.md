@@ -65,10 +65,7 @@ Preprocessing steps included:
 
 This project proves that machine learning can effectively classify obesity risk with high accuracy and strong interpretability. The models were especially successful with clearly defined categories and offer actionable insights for early intervention.
 
-Improvements could include:
-- Hyperparameter tuning for even better performance
-- Feature engineering to capture interactions between behaviors
-- Incorporating time-series or longitudinal data if available
+For the next stage of this project, I plan to shift the focus toward a more meaningful and actionable approach. Rather than relying on obvious or unchangeable features like weight, height, and gender, I intend to retrain the model using only modifiable lifestyle factors such as dietary habits, physical activity, water intake, and alcohol consumption. This revised version, which I’m calling the Habit-Based Obesity Risk Estimator, aims not only to predict an individual’s obesity level but also to provide personalized, behavior-focused recommendations. For example, a user might receive insights such as: “You’re at risk of Obesity Type I. Based on your data, consider increasing your vegetable intake, drinking more water, and reducing snacking between meals.” I also plan to incorporate additional context, such as cultural background, to account for how food choices and activity levels can vary significantly across different populations.
 
 Ultimately, this tool can help both individuals and organizations better understand the lifestyle factors driving obesity and take proactive steps to prevent it.
 
