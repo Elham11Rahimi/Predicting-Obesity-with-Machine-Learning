@@ -41,21 +41,21 @@ A walk-through Jupyter Notebook showing data exploration, feature engineering, a
 
 ## Methodology
 
-### 📊 Exploratory Data Analysis (EDA)
+### Exploratory Data Analysis (EDA)
 - Investigated class distribution and trends across features like meals per day, activity level, and food intake.
 - Visualized relationships between obesity levels and lifestyle habits.
 
-### 🛠️ Feature Engineering
+### Feature Engineering
 - Created dummy variables from categorical features
 - Removed low-variance and redundant features
 - Standardized column names and fixed data quality issues
 
-### ⚙️ Preprocessing
+### Preprocessing
 - Scaled numeric variables using `StandardScaler`
 - Created grouped datasets for dimension reduction (Grouped PCA)
 - Addressed data skew and ensured input consistency across models
 
-### 🤖 Modeling Journey
+### Modeling Journey
 
 1. **Logistic Regression**  
    - Used as the baseline model  
@@ -126,10 +126,10 @@ A walk-through Jupyter Notebook showing data exploration, feature engineering, a
 ## Repository Structure
 
 ```bash
-📦 obesity-prediction
-├── 📁 data/                    # Raw and processed datasets
-├── 📁 notebooks/              # Jupyter notebooks (EDA, modeling, etc.)
-├── 📁 models/                 # Saved model files
-├── 📁 visuals/                # Graphs and images for presentation
-├── 📄 requirements.txt        # Python package dependencies
-├── 📄 README.md               # This file
+obesity-prediction
+├── data/                    # Raw and processed datasets
+├── notebooks/              # Jupyter notebooks (EDA, modeling, etc.)
+├── models/                 # Saved model files
+├── visuals/                # Graphs and images for presentation
+├── requirements.txt        # Python package dependencies
+├── README.md               # This file
