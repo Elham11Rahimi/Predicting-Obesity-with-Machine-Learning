@@ -1,55 +1,135 @@
-## Predicting Obesity with Machine Learning
-=========================
+# Predicting Obesity with Machine Learning
 
-### Executive Summary
+## Executive Summary
 
-Obesity is a major health issue worldwide, driven by lifestyle, eating habits, and genetics. Catching it early can help prevent serious health problems, but predicting obesity risk isn't always straightforward. With machine learning and data analysis, we can pinpoint key risk factors and predict someone's likelihood of becoming obese. This gives people the chance to take action before it happens, making healthier choices based on data insights.
+Obesity is a global health concern tied to serious conditions like diabetes, heart disease, and sleep apnea. The earlier we can predict obesity risk, the better our chances of preventing it. This project uses machine learning to analyze lifestyle habits, eating patterns, and physical activity to classify individuals into obesity risk categories.
 
-#### Who is Affected?
+By identifying the strongest predictors of obesity, this model can help individuals, healthcare professionals, and wellness platforms take early, data-informed action.
 
-- Individuals who may be at risk of obesity.
+---
 
-- Healthcare providers looking to offer proactive care.
+## Who is Affected?
 
-- Policymakers and researchers working on obesity prevention strategies.
+- Individuals who may be at risk of obesity  
+- Healthcare providers aiming to offer proactive care  
+- Policymakers and researchers focused on prevention  
+- Nutritionists, personal trainers, and health app developers  
+- Families with a history of obesity looking to reduce risk
 
-#### Proposed Data Science Solution
+---
 
-Classification models will be explored and the model will not only predict obesity risk but also explain which lifestyle changes could help reduce it.
+## Proposed Data Science Solution
 
-#### Impact of the Solution
+We approach this as a **multiclass classification** problem, building a model that predicts a person’s obesity level and highlights the most influential lifestyle factors contributing to that risk.
 
-- Personalized health recommendations.
+---
 
-- Healthcare applications where doctors and nutritionists can use the model to guide patients.
+## Impact of the Solution
 
-- Preventative strategies for meal planning services and fitness apps.
+- Personalized health recommendations
+- Support tools for doctors and nutritionists
+- Prevention strategies for gyms, wellness coaches, and meal-planning apps
+- Educational outreach for high-risk individuals and families
 
-- People who have obesity in their family and want to take precautions. 
-### Demo
+---
 
-### Methodology
-- Exploratory Data Analysis (EDA) to understand trends and class distribution
+## Demo
+*Coming soon.*  
+A walk-through Jupyter Notebook showing data exploration, feature engineering, and model results.
 
-- Feature Engineering: created binary features, combined sparse columns, removed low-variance and redundant features
+---
 
-- Preprocessing: applied standard scaling and log transformation to reduce skew. Created a seperate dataframe for group PCA
+## Methodology
 
-- Modeling: Trained and tuned a logistic regression model and decision trees model using Pipeline and GridSearchCV
+### 📊 Exploratory Data Analysis (EDA)
+- Investigated class distribution and trends across features like meals per day, activity level, and food intake.
+- Visualized relationships between obesity levels and lifestyle habits.
 
-Evaluation: Achieved ~87% accuracy with balanced precision and recall across all obesity levels
+### 🛠️ Feature Engineering
+- Created dummy variables from categorical features
+- Removed low-variance and redundant features
+- Standardized column names and fixed data quality issues
 
-### Organization
+### ⚙️ Preprocessing
+- Scaled numeric variables using `StandardScaler`
+- Created grouped datasets for dimension reduction (Grouped PCA)
+- Addressed data skew and ensured input consistency across models
 
-#### Repository 
+### 🤖 Modeling Journey
 
-#### Dataset
-Source: https://www.kaggle.com/datasets/fatemehmehrparvar/obesity-levels
+1. **Logistic Regression**  
+   - Used as the baseline model  
+   - Performed well with regularization and tuning  
+   - Highlighted multicollinearity and non-linearity challenges for some features
 
-Size: ~20,000 records
+2. **Decision Tree Classifier**  
+   - Tuned using GridSearchCV (max depth, min samples split/leaf)  
+   - Helped visualize decision paths and identify most influential features  
+   - Slightly overfit on training data
 
-Features: Demographics, dietary habits, physical activity, lifestyle indicators
+3. **Random Forest (Final Model)**  
+   - Chosen for its balance between performance and interpretability  
+   - Achieved ~87% accuracy  
+   - Delivered strong recall and precision across all 7 obesity classes  
+   - Feature importances and SHAP analysis helped explain model behavior
 
-Target: obesity_level (7-class categorical variable)
+---
 
-### Credits & References
+## Model Evaluation
+
+- **Accuracy**: ~87% on test set  
+- **F1-Score**: Balanced across all classes (no single class dominated performance)  
+- **Confusion Matrix**: Low misclassification between adjacent obesity levels  
+- **Permutation Importance + SHAP**: Confirmed model was learning meaningful patterns, not noise
+
+---
+
+## Data Dictionary
+
+<details>
+<summary><strong>Click to expand</strong></summary>
+
+| Column Name                     | Description                                          | Data Type | Possible Values / Units                                                               | Example              |
+|--------------------------------|------------------------------------------------------|-----------|----------------------------------------------------------------------------------------|----------------------|
+| Age                            | Age of each person                                  | Float     | 14-61                                                                                  | 25                   |
+| Height                         | Height of each person                               | Float     | Meters                                                                                 | 1.70                 |
+| Weight                         | Weight of each person                               | Float     | Kgs                                                                                    | 70                   |
+| family_history_with_overweight| Obese family member?                                | Boolean   | 0 or 1                                                                                 | 0                    |
+| FAVC                           | High-caloric food consumption                       | Boolean   | 0 or 1                                                                                 | 0                    |
+| FCVC                           | Vegetable consumption frequency                     | Float     | 1 - 3                                                                                  | 2                    |
+| NCP                            | Number of main meals                                | Float     | 1 - 4                                                                                  | 3                    |
+| SMOKE                          | Smoker or not                                       | Boolean   | 0 or 1                                                                                 | 0                    |
+| water                          | Daily water consumption                             | Float     | 1 - 3 (units not specified)                                                            | 2.6                  |
+| SCC                            | Caloric beverages consumption                       | Boolean   | 0 or 1                                                                                 | 0                    |
+| physical_activity_freq         | Physical activity frequency                         | Float     | 0 - 3 (units not specified)                                                            | 2.4                  |
+| TUE                            | Technology use hours                                | Float     | 0 - 2 (units not specified)                                                            | 1.7                  |
+| obesity_level                  | Obesity class label                                 | String    | ['Overweight_Level_II', 'Normal_Weight', ..., 'Obesity_Type_I']                       | 'Overweight_Level_I' |
+| CAEC_Always                    | Always eats between meals                           | Boolean   | 0 or 1                                                                                 | 0                    |
+| CAEC_Frequently                | Frequently eats between meals                       | Boolean   | 0 or 1                                                                                 | 1                    |
+| CAEC_Never                     | Never eats between meals                            | Boolean   | 0 or 1                                                                                 | 0                    |
+| CAEC_Sometimes                 | Sometimes eats between meals                        | Boolean   | 0 or 1                                                                                 | 1                    |
+| Gender_Female                  | Gender = Female                                     | Boolean   | 0 or 1                                                                                 | 1                    |
+| Gender_Male                    | Gender = Male                                       | Boolean   | 0 or 1                                                                                 | 1                    |
+| alcohol_con_Frequently         | Frequently consumes alcohol                         | Boolean   | 0 or 1                                                                                 | 1                    |
+| alcohol_con_Never              | Never consumes alcohol                              | Boolean   | 0 or 1                                                                                 | 1                    |
+| alcohol_con_Sometimes          | Sometimes consumes alcohol                          | Boolean   | 0 or 1                                                                                 | 1                    |
+| MTRANS_Automobile              | Transportation by automobile                        | Boolean   | 0 or 1                                                                                 | 1                    |
+| MTRANS_Bike                    | Transportation by bike                              | Boolean   | 0 or 1                                                                                 | 0                    |
+| MTRANS_Motorbike               | Transportation by motorbike                         | Boolean   | 0 or 1                                                                                 | 1                    |
+| MTRANS_Public_Transportation   | Transportation by public transport                  | Boolean   | 0 or 1                                                                                 | 1                    |
+| MTRANS_Walking                 | Transportation by walking                           | Boolean   | 0 or 1                                                                                 | 1                    |
+
+</details>
+
+---
+
+## Repository Structure
+
+```bash
+📦 obesity-prediction
+├── 📁 data/                    # Raw and processed datasets
+├── 📁 notebooks/              # Jupyter notebooks (EDA, modeling, etc.)
+├── 📁 models/                 # Saved model files
+├── 📁 visuals/                # Graphs and images for presentation
+├── 📄 requirements.txt        # Python package dependencies
+├── 📄 README.md               # This file
